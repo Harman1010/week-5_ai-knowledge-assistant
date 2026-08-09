@@ -37,13 +37,13 @@ class VectorService:
 
         results = []
 
-        for score,index in scores[0],indices[0]:
+        for score,index in zip(scores[0],indices[0]):
 
             if index == -1:
                 continue
 
             results.append(
-                (self.documents[index],flat[score])
+                (self.documents[index],float(score))
             )
 
         return results
