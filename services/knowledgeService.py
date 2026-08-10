@@ -4,6 +4,8 @@ from rag.ingestion import document_ingestion, chunking
 from rag.retrieval import RetrievalPipeline
 from services.generation_service import GenerationService
 
+from rag.guardrails import Guardrails
+
 
 class KnowledgeService:
 
@@ -11,6 +13,7 @@ class KnowledgeService:
         self.retrieval = RetrievalPipeline()
         self.generation = GenerationService()
         self.ready = False
+        self.guardrails = Guardrails()
 
     def ingest(self, file_path: str):
 
@@ -29,6 +32,8 @@ class KnowledgeService:
 
     def ask(self, query: str):
 
+        self.guardrails.input_validate(query)
+
         if not self.ready:
             raise RuntimeError(
                 "Knowledge base has not been initialized."
@@ -36,10 +41,14 @@ class KnowledgeService:
 
         results = self.retrieval.retrieve(query)
 
+        self.guardrails.retrieval_validate(results)
+
         answer = self.generation.generate_answer(
             query,
             results
         )
+
+        self.guardrails.grounding_validate(answer)
 
         sources = []
 
