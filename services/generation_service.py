@@ -1,5 +1,6 @@
 from services.llm_service import LLMService
 
+
 class GenerationService:
 
     def __init__(self):
@@ -9,11 +10,15 @@ class GenerationService:
 
         context_parts = []
 
-        for document, _ in documents:
+        for document, score in documents:
             context_parts.append(
-                f"Source: {document.metadata.get('source')}\n"
-                f"Page: {document.metadata.get('page')}\n"
-                f"Content: {document.page_content}"
+                f"""
+Source: {document.metadata.get("source")}
+Page: {document.metadata.get("page")}
+
+Content:
+{document.page_content}
+"""
             )
 
         context = "\n\n".join(context_parts)
@@ -21,20 +26,26 @@ class GenerationService:
         prompt = f"""
 You are an enterprise knowledge base assistant.
 
-Answer the user's question using ONLY the provided context.
+Your task is to answer the user's question using the provided
+document context.
 
-If the answer is not present in the context, say:
-"I don't have enough information in the provided documents."
+IMPORTANT RULES:
+1. Use the provided context as the source of truth.
+2. Do not use outside knowledge.
+3. If the answer is explicitly present in the context, answer it.
+4. Only say "I don't have enough information in the provided documents"
+   if the context genuinely does not contain the answer.
+5. Do not assume that the user's wording must exactly match the wording
+   in the document.
+6. Give a concise answer.
 
-Do not invent facts.
-
-User question:
+USER QUESTION:
 {query}
 
-Context:
+DOCUMENT CONTEXT:
 {context}
 
-Provide a concise and accurate answer.
+ANSWER:
 """
 
         return self.llm.generate(prompt)
