@@ -30,7 +30,7 @@ class KnowledgeService:
             "source": Path(file_path).name,
         }
 
-    def ask(self, query: str):
+    def ask(self, query: str, include_retrieval : bool = False):
 
         self.guardrails.input_validate(query)
 
@@ -58,7 +58,14 @@ class KnowledgeService:
                 "page": document.metadata.get("page", 0),
             })
 
-        return {
+        response =  {
             "answer": answer,
             "sources": sources,
         }
+
+        if include_retrieval:
+
+            response["retrieved_douments"] = results
+
+        return response
+
