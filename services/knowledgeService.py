@@ -30,7 +30,7 @@ class KnowledgeService:
             "source": Path(file_path).name,
         }
 
-    def ask(self, query: str, include_retrieval : bool = False):
+    def ask(self, query: str, include_retrieval : bool = False, generate_answer : bool = False):
 
         self.guardrails.input_validate(query)
 
@@ -43,12 +43,16 @@ class KnowledgeService:
 
         self.guardrails.retrieval_validate(results)
 
-        answer = self.generation.generate_answer(
-            query,
-            results
-        )
+        ans = None
 
-        self.guardrails.grounding_validate(answer)
+        if generate_answer:
+
+            answer = self.generation.generate_answer(
+                query,
+                results
+            )
+
+            self.guardrails.grounding_validate(answer)
 
         sources = []
 
@@ -65,7 +69,7 @@ class KnowledgeService:
 
         if include_retrieval:
 
-            response["retrieved_douments"] = results
+            response["retrieved_documents"] = results
 
         return response
 

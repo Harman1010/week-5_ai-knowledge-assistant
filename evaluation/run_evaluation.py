@@ -35,7 +35,7 @@ def main():
 
         result = knowledge_service.ask(
             question,
-            include_retrieval=True
+            include_retrieval=True,generate_answer=False
         )
 
         print("=" * 70)
