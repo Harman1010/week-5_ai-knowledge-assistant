@@ -1,0 +1,82 @@
+[
+  {
+    "question": "What is pollution?",
+    "expected_answer": "Pollution is the introduction of substances or energy, such as light or heat, into the natural environment in amounts or concentrations that can be harmful to humans, animals, and plants.",
+    "expected_source": "What is Pollution - Final.pdf",
+    "expected_pages": [
+      1
+    ]
+  },
+  {
+    "question": "What are the three major categories of pollution?",
+    "expected_answer": "The three major categories are water pollution, air pollution, and land pollution.",
+    "expected_source": "What is Pollution - Final.pdf",
+    "expected_pages": [
+      1
+    ]
+  },
+  {
+    "question": "What Earth systems can be affected by pollution?",
+    "expected_answer": "Pollution can affect land, waterways such as groundwater, rivers, lakes, bays, and oceans, air, and climate.",
+    "expected_source": "What is Pollution - Final.pdf",
+    "expected_pages": [
+      1
+    ]
+  },
+  {
+    "question": "What are common sources of land pollution?",
+    "expected_answer": "Common sources include litter, spilled chemicals such as gasoline, industrial waste, commercial waste such as plastic food wrappers, and solid household waste.",
+    "expected_source": "What is Pollution - Final.pdf",
+    "expected_pages": [
+      1
+    ]
+  },
+  {
+    "question": "How can land pollution become water pollution?",
+    "expected_answer": "Rain or wind can wash pollutants from land into storm drains or waterways as runoff. The polluted runoff can then enter streams, rivers, bays, and eventually the ocean.",
+    "expected_source": "What is Pollution - Final.pdf",
+    "expected_pages": [
+      1
+    ]
+  },
+  {
+    "question": "What is air pollution and what are some of its sources?",
+    "expected_answer": "Air pollution is a mixture of gases and solid particles in the air. Sources include vehicle exhaust, factory chemicals, dust, mold, smog, and other sources.",
+    "expected_source": "What is Pollution - Final.pdf",
+    "expected_pages": [
+      2
+    ]
+  },
+  {
+    "question": "What materials can cause water pollution?",
+    "expected_answer": "Water pollution can be caused by plastics, chemicals, pesticides, fertilizers, nutrients, and sediments entering groundwater, rivers, lakes, ponds, and oceans.",
+    "expected_source": "What is Pollution - Final.pdf",
+    "expected_pages": [
+      2
+    ]
+  },
+  {
+    "question": "How can pollutants move through the food chain?",
+    "expected_answer": "Organisms can absorb or ingest toxins from pollution. As organisms eat one another, the toxins can pass from organism to organism up the food chain and increase in concentration.",
+    "expected_source": "What is Pollution - Final.pdf",
+    "expected_pages": [
+      2
+    ]
+  },
+  {
+    "question": "Why is plastic pollution dangerous to natural environments?",
+    "expected_answer": "Plastic items are lightweight and can travel by wind and water, while their durability allows them to remain in ecosystems for years. They can injure animals through entanglement or ingestion.",
+    "expected_source": "What is Pollution - Final.pdf",
+    "expected_pages": [
+      2
+    ]
+  },
+  {
+    "question": "What short-term and long-term health problems can air pollution cause?",
+    "expected_answer": "Air pollution can cause short-term problems such as sneezing and coughing and long-term problems such as disease and even death.",
+    "expected_source": "What is Pollution - Final.pdf",
+    "expected_pages": [
+      2
+    ]
+  }
+]
